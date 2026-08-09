@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="Volatility Forecasting Dashboard", layout="wide")
 
-# --- Model definition (must match training exactly) ---
+# --- Model definition---
 class VolatilityLSTM(nn.Module):
     def __init__(self, input_size=1, hidden_size=32, num_layers=1):
         super().__init__()
@@ -21,7 +21,7 @@ class VolatilityLSTM(nn.Module):
         prediction = self.fc(last_output)
         return prediction
 
-# --- Cached loading functions (so data/models only load once, not on every interaction) ---
+# --- Cached loading functions ---
 @st.cache_data
 def load_data():
     ftse = pd.read_csv('data/ftse_processed.csv', index_col='Date', parse_dates=True)
@@ -46,7 +46,7 @@ def load_models():
 ftse, sp500 = load_data()
 model_ftse, model_sp500, scaler_ftse, scaler_sp500 = load_models()
 
-st.title("📊 Volatility Forecasting: GARCH vs LSTM")
+st.title("Volatility Forecasting: GARCH vs LSTM")
 st.caption("Comparing classical statistical models against deep learning for market volatility forecasting")
 
 # --- Sidebar controls ---
