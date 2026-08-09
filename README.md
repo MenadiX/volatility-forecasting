@@ -2,7 +2,6 @@
 
 Forecasting stock market volatility on the FTSE 100 and S&P 500, comparing a classical econometric model (GARCH) against a deep learning model (LSTM) — with a fair, out-of-sample evaluation and an interactive dashboard.
 
-**[Live dashboard demo →](#) | [Watch the walkthrough →](#)**
 
 ## The question
 
